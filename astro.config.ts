@@ -24,15 +24,15 @@ export default defineConfig({
       name: 'Ильяс Исмаилов',
       openGraph: {
         home: {
-          title: 'Ильяс',
+          title: 'Ильяс Исмаилов',
           description: 'Персональная страничка.'
         },
         blog: {
-          title: 'Blog',
-          description: 'News and guides for Spectre.'
+          title: 'Блог',
+          description: 'Новости и посты на различные темы связанные с IT и системной аналитикой'
         },
         projects: {
-          title: 'Projects'
+          title: 'Проекты'
         }
       },
       giscus: {
