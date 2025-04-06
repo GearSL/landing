@@ -1,1 +1,1 @@
-export const BASE_URL = '/my-landing';
+export const BASE_URL = '/landing';

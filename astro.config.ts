@@ -25,11 +25,11 @@ export default defineConfig({
       openGraph: {
         home: {
           title: 'Ильяс Исмаилов',
-          description: 'Персональная страничка.'
+          description: 'Персональная страница'
         },
         blog: {
           title: 'Блог',
-          description: 'Новости и посты на различные темы связанные с IT и системной аналитикой'
+          description: 'Новости и посты на тему IT и системную аналитику'
         },
         projects: {
           title: 'Проекты'
