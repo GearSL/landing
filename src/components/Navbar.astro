@@ -1,22 +1,23 @@
 ---
 import Icon from "./Icon.astro";
 import { name } from 'spectre:globals';
+import { BASE_URL } from '../config';
 
 const path = Astro.url.pathname;
 ---
 <nav>
-  <a class="site-title" href="/">{name}</a>
+  <a class="site-title" href=`${BASE_URL}`>{name}</a>
   <ul>
     <li>
-      <a href="/blog" class:list={{ active: path === '/blog' }}>Blog</a>
+      <a href=`${BASE_URL}/blog` class:list={{ active: path === '/blog' }}>Блог</a>
     </li>
     <li class="nav-separator">/</li>
     <li>
-      <a href="/projects" class:list={{ active: path === '/projects' }}>Projects</a>
+      <a href=`${BASE_URL}/projects` class:list={{ active: path === '/projects' }}>Проекты</a>
     </li>
     <li class="nav-separator">/</li>
     <li>
-      <input id="search" type="text" placeholder="Search (Ctrl+K)" />
+      <input id="search" type="text" placeholder="Поиск (Ctrl+K)" />
       <div id="search-results"></div>
     </li>
   </ul>
@@ -76,7 +77,7 @@ const path = Astro.url.pathname;
   });
 
   searchElement?.addEventListener('blur', () => {
-    searchElement.placeholder = 'Search (Ctrl+K)';
+    searchElement.placeholder = 'Поиск (Ctrl+K)';
   });
 
   searchElement?.addEventListener('blur', () => {
@@ -135,9 +136,9 @@ const path = Astro.url.pathname;
 
   const handleTabletChange = () => {
     if (window.matchMedia('(max-width: 640px)').matches) {
-      searchElement.placeholder = 'Search';
+      searchElement.placeholder = 'Поиск';
     } else {
-      searchElement.placeholder = 'Search (Ctrl+K)';
+      searchElement.placeholder = 'Поиск (Ctrl+K)';
     }
   }
 

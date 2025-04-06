@@ -6,6 +6,7 @@ import Card from "../components/Card.astro";
 import Icon from "../components/Icon.astro";
 import Layout from "../layouts/Layout.astro";
 import { openGraph } from 'spectre:globals';
+import { BASE_URL } from '../config';
 
 const posts = await getCollection('posts', (post) => post.data.draft !== true);
 const tags = posts.flatMap((post) => post.data.tags.map((tag) => tag.id));
@@ -23,7 +24,7 @@ const tags = posts.flatMap((post) => post.data.tags.map((tag) => tag.id));
           <li>
             <a
               class="blog-tag"
-              href="/blog"
+              href=`${BASE_URL}/blog`
               data-tag={tag}
             >
               {tag}
@@ -37,11 +38,11 @@ const tags = posts.flatMap((post) => post.data.tags.map((tag) => tag.id));
 		<Card>
 			<div class="header-container">
 				<Icon type="lucide" name="rss" width={24} height={24} class='glow-icon' />
-				<h2>Latest Posts</h2>
+				<h2>Последние постыLatest Posts</h2>
 			</div>
 			<div class="content-container">
 				{posts.sort((a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime()).map((post) => (
-					<a href={`/blog/${post.id}`} class="post-container" data-tags={post.data.tags.map((tag) => tag.id).join(",")}>
+					<a href={`${BASE_URL}/blog/${post.id}`} class="post-container" data-tags={post.data.tags.map((tag) => tag.id).join(",")}>
 						<div class="post-header">
 							<h3>{post.data.title}</h3>
 							<span class="post-date">{post.data.createdAt.toLocaleDateString()}</span>

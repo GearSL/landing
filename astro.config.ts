@@ -4,6 +4,7 @@ import expressiveCode from 'astro-expressive-code';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import spectre from './package/src';
+import { BASE_URL } from './src/config';
 
 import node from '@astrojs/node';
 import { spectreDark } from './src/ec-theme';
@@ -11,7 +12,7 @@ import { spectreDark } from './src/ec-theme';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gearsl.github.io',
-  //base: '/my-landing',
+  base: BASE_URL,
   output: 'static',
   integrations: [
     expressiveCode({
@@ -20,11 +21,11 @@ export default defineConfig({
     mdx(),
     sitemap(),
     spectre({
-      name: 'Spectre',
+      name: 'Ильяс Исмаилов',
       openGraph: {
         home: {
-          title: 'Spectre',
-          description: 'A minimalistic theme for Astro.'
+          title: 'Ильяс',
+          description: 'Персональная страничка.'
         },
         blog: {
           title: 'Blog',
@@ -43,7 +44,7 @@ export default defineConfig({
         strict: true,
         reactionsEnabled: true,
         emitMetadata: false,
-        lang: 'en',
+        lang: 'ru',
       }
     })
   ],
